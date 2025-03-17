@@ -1,7 +1,7 @@
 import BreadCrumbComponent from "@/components/BreadCrumbComponent";
-import { getBookById } from "@/service/BookService";
-import { getCartoonById } from "@/service/CartoonService";
-import { Eye } from "lucide-react";
+import {getBookById} from "@/service/BookService";
+import {getCartoonById} from "@/service/CartoonService";
+import {Eye} from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -42,8 +42,8 @@ export default async function page({ params, searchParams }) {
               {article?.payload?.book_author || article?.payload?.ct_creator}
             </span>
           </p>
-          <p className="flex text-custom-blue ">
-            <Eye /> 200 times | {article?.payload?.created_at}
+          <p className="flex text-custom-blue gap-2">
+            <Eye /> 200 times | {new Date(article?.payload?.created_at).getFullYear()}
           </p>
           <p>
             {article?.payload?.description || article?.payload?.ct_description}

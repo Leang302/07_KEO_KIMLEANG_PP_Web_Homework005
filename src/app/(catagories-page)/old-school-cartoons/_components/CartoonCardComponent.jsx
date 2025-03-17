@@ -19,7 +19,7 @@ export default function CartoonCardComponent({ cartoon }) {
           <h4 className="text-2xl">{cartoon.ct_title}</h4>
           <p className="flex text-custom-blue gap-1">
             <Eye />
-            {cartoon.view_count} times | {cartoon.published_year}
+            {cartoon.view_count} times | {new Date(cartoon?.published_year).getFullYear()}
           </p>
         </div>
       </div>
