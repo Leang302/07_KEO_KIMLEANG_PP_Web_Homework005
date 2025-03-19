@@ -1,7 +1,7 @@
 import BreadCrumbComponent from "@/components/BreadCrumbComponent";
-import {getBookById} from "@/service/BookService";
-import {getCartoonById} from "@/service/CartoonService";
-import {Eye} from "lucide-react";
+import { getBookById } from "@/service/BookService";
+import { getCartoonById } from "@/service/CartoonService";
+import { Eye } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -10,7 +10,7 @@ export default async function page({ params, searchParams }) {
 
   const { id } = await params;
   let article;
-  let key;
+
   if (type == "book") {
     article = await getBookById(id);
   } else {
@@ -34,7 +34,7 @@ export default async function page({ params, searchParams }) {
           />
         </div>
         {/* article */}
-        <div className="px-16 pt-40 py-16 space-y-4 text-custom-dark-blue">
+        <div className="px-16 pt-50 py-16 space-y-4 text-custom-dark-blue">
           <h4>{article?.payload?.book_title || article?.payload?.ct_title}</h4>
           <p>
             by{" "}
@@ -42,9 +42,13 @@ export default async function page({ params, searchParams }) {
               {article?.payload?.book_author || article?.payload?.ct_creator}
             </span>
           </p>
-          <p className="flex text-custom-blue gap-2">
-            <Eye /> 200 times | {new Date(article?.payload?.created_at).getFullYear()}
-          </p>
+          {type == "cartoon" && (
+            <p className="flex text-custom-blue gap-2">
+              <Eye /> {article?.payload?.view_count} times |{" "}
+              {new Date(article?.payload?.created_at).getFullYear()}
+            </p>
+          )}
+
           <p>
             {article?.payload?.description || article?.payload?.ct_description}
           </p>
