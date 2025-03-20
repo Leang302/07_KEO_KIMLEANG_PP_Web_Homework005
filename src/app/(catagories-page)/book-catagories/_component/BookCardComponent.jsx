@@ -9,7 +9,7 @@ export default function BookCardComponent({ book }) {
           <Image src={book.image} fill alt={book.book_title} />
         </div>
         <LinkComponent book={book} type="book" name="book catagories">
-          <p className="p-2 bg-custom-light-blue text-custom-dark-blue text-center text-md font-semibold rounded-3xl hover:cursor-pointer">
+          <p className="p-2 bg-custom-light-blue hover:bg-blue-200 text-custom-dark-blue text-center text-md font-semibold rounded-3xl hover:cursor-pointer">
             READ FULL ARTICLE
           </p>
         </LinkComponent>

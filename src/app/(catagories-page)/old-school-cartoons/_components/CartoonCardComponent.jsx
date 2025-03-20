@@ -11,7 +11,7 @@ export default function CartoonCardComponent({ cartoon }) {
             src={cartoon.image}
             fill
             alt={cartoon.ct_title}
-            className="object-cover  hover:cursor-pointer"
+            className="object-cover  hover:cursor-pointer hover:scale-105 transition-all"
           />
         </div>
         {/* text box */}
@@ -19,7 +19,8 @@ export default function CartoonCardComponent({ cartoon }) {
           <h4 className="text-2xl">{cartoon.ct_title}</h4>
           <p className="flex text-custom-blue gap-1">
             <Eye />
-            {cartoon.view_count} times | {new Date(cartoon?.published_year).getFullYear()}
+            {cartoon.view_count} times |{" "}
+            {new Date(cartoon?.published_year).getFullYear()}
           </p>
         </div>
       </div>

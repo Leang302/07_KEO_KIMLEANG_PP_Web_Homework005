@@ -45,7 +45,7 @@ export default async function BreadcrumbComponent({ catagoryName, title }) {
 
         {/* Current Page */}
         <BreadcrumbItem>
-          <BreadcrumbPage className="text-custom-red flex items-center gap-1">
+          <BreadcrumbPage className="text-custom-red flex items-center gap-1 hover:text-red-900 hover:cursor-pointer">
             {catagoryName === "book catagories" ? (
               <BookCheck className="size-5" />
             ) : (
